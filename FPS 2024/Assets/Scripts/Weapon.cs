@@ -13,7 +13,7 @@ public class Weapon : MonoBehaviour
 
     int magazine;
     int currentAmmo, bulletsForShoot;
-    float timeToShoot, fireRate;
+    float timeToShoot, fireRate, range;
 
     void Start()
     {
@@ -25,6 +25,7 @@ public class Weapon : MonoBehaviour
         timeToShoot = weapon.TimeBetweenShoot;
         fireRate = weapon.FireRat;
         bulletsForShoot = weapon.BulletsForShoot;
+        range = weapon.Range;
 
         meshFilter.mesh = weapon.Model;
         meshRenderer.material = weapon.Material ;
@@ -48,7 +49,21 @@ public class Weapon : MonoBehaviour
 
     private void Shoot()
     {
+        RaycastHit hit;
 
+        Vector3 direction = 
+
+        if (Physics.Raycast(firePoint.position, direction, out hit, range))
+        {
+            Collider obj = hit.transform.GetComponent<Collider>();
+            if (obj != null)
+            {
+                Debug.Log(obj.gameObject.name);
+                Instantiate(bulletImpact, hit.point, Quaternion.LookRotation(hit.normal));
+            }
+        }
+
+        Debug.DrawLine(firePoint.position, firePoint.position + direction * range);
     }
 
     void Update()
