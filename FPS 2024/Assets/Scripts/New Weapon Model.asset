@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c370818054cc89f449f22d8cb1c663de, type: 3}
+  m_Name: New Weapon Model
+  m_EditorClassIdentifier: 
+  damage: 10
+  range: 5
+  fireRat: 10
+  spread: 4
+  reloadTime: 3
+  timeBetweenShoot: 1
+  magazineCap: 2
+  bulletsForShoot: 4
+  automatic: 1
+  scope: 0
+  model: {fileID: 0}
+  material: {fileID: 0}
+  weaponPosition: {x: 0, y: 0, z: 0}
