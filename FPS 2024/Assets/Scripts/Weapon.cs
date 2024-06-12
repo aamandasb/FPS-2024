@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    WeaponModel weapon;
+    WeaponModel weaponData;
     Transform firePoint;
     GameObject bulletImpact;
 
@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour
     MeshFilter meshFilter;
 
     int magazine;
-    int currentAmmo, bulletsForShoot;
+    int currentMagazine, bulletsForShoot;
     float timeToShoot, fireRate, range;
 
     void Start()
@@ -20,31 +20,33 @@ public class Weapon : MonoBehaviour
         meshRenderer = gameObject.GetComponentInChildren<MeshRenderer>();
         meshFilter = gameObject.GetComponentInChildren<MeshFilter>();
 
-        magazine = weapon.MagazineCap;
+        magazine = weaponData.MagazineCap;
 
-        timeToShoot = weapon.TimeBetweenShoot;
-        fireRate = weapon.FireRat;
-        bulletsForShoot = weapon.BulletsForShoot;
-        range = weapon.Range;
+        timeToShoot = weaponData.TimeBetweenShoot;
+        fireRate = weaponData.FireRat;
+        bulletsForShoot = weaponData.BulletsForShoot;
+        range = weaponData.Range;
 
-        meshFilter.mesh = weapon.Model;
-        meshRenderer.material = weapon.Material ;
+        meshFilter.mesh = weaponData.Model;
+        meshRenderer.material = weaponData.Material ;
     }
 
-    private IEnumerator FireCoroutine()
+    IEnumerator FireCoroutine()
     {
-        magazine--;
-
-        if (Time.time > timeToShoot)
+        if(Time.time > timeToShoot)
         {
-            timeToShoot = Time.time + 1 / fireRate;
-
-            for (int i = 0; i < bulletsForShoot; i++)
+            if (currentMagazine >= weaponData.BulletsForShoot && Time.time > timeToShoot)
             {
-                Shoot();
-                yield return new WaitForSeconds(timeToShoot);
+                timeToShoot = Time.time + 1 / fireRate;
+
+                for (int i = 0; i < bulletsForShoot; i++)
+                {
+                    Shoot();
+                    yield return new WaitForSeconds(timeToShoot);
+                }
             }
         }
+        
     }
 
     private void Shoot()
