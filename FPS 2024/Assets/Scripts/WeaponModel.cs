@@ -4,11 +4,11 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Weapon")]
 
-public class WeaponModel : ScriptableObject
+public class WeaponData : ScriptableObject
 {
     [SerializeField] float damage;
     [SerializeField] float range;
-    [SerializeField] float fireRat;
+    [SerializeField] float fireRate;
     [SerializeField] float spread;
     [SerializeField] float reloadTime;
     [SerializeField] float timeBetweenShoot;
@@ -22,7 +22,7 @@ public class WeaponModel : ScriptableObject
 
     public float Damage { get => damage; }
     public float Range { get => range; }
-    public float FireRat { get => fireRat; }
+    public float FireRate { get => fireRate; }
     public float Spread { get => spread; }
     public float ReloadTime { get => reloadTime; }
     public float TimeBetweenShoot { get => timeBetweenShoot; }
