@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,5 +34,33 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    private void Movement()
+    {
 
+    }
+
+    private void Rotation()
+    {
+
+    }
+
+    private void Fire()
+    {
+
+    }
+
+    private void Jump()
+    {
+
+    }
+
+    private void Crouch()
+    {
+
+    }
+
+    private void ThrowGrenade()
+    {
+
+    }
 }

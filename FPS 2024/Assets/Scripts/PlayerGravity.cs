@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class PlayerGravity : MonoBehaviour
 {
-    // Start is called before the first frame update
+    bool onGround;
+
+    Vector3 velocity, offset;
+
+    float jumpHeight, radius;
+
+    CharacterController characterController;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
         
+    }
+
+    private void CheckGround()
+    {
+
+    }
+
+    private void Movement()
+    {
+
     }
 }
