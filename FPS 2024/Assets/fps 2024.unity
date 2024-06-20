@@ -451,7 +451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grenadePrefab: {fileID: 7103547180018004156, guid: 80dc6b94c20bf674d912149f6a7224b5, type: 3}
   throwPoint: {fileID: 1341526400}
-  mouseSensitivity: 356
+  mouseSensitivity: 353
 --- !u!143 &1254791377
 CharacterController:
   m_ObjectHideFlags: 0
